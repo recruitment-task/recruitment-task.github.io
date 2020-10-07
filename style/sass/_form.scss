@@ -1,0 +1,104 @@
+.form {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+
+  &__input-container {
+    position: relative;
+    margin: 20px 0 0 3px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__input {
+    width: 276px;
+    height: 30px;
+    padding: 6px 0 6px 12px;
+    border-radius: 3px;
+    border-color: $inputBorderColor;
+    border-style: solid;
+    border-width: 1px;
+    &:focus {
+      border-color: $primaryColor;
+      outline: none;
+    }
+    &__error {
+      border-color: $worningColor;
+    }
+    &::placeholder {
+      color: $placeholderColor;
+    }
+  }
+  &__icon-img {
+    box-sizing: content-box;
+    position: absolute;
+    width: 13px;
+    height: 7px;
+    right: 12px;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 2px;
+    cursor: pointer;
+  }
+  &__label {
+    display: none;
+    position: absolute;
+    font-size: 12px;
+    padding: 0 6px 0 2px;
+    left: 8px;
+    bottom: 23px;
+    z-index: 9999;
+    background-color: white;
+    font-weight: $fontWeightSemiBold;
+    color: $labelColor;
+  }
+  &__error-hint {
+    position: absolute;
+    display: none;
+    font-weight: $fontWeightSemiBold;
+    font-size: 12px;
+    color: $worningColor;
+    bottom: -13px;
+    left: 2px;
+  }
+  &__add-btn {
+    width: 91px;
+    height: 30px;
+    font-weight: $fontWeightSemiBold;
+    color: white;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform linear .3s;
+    &:hover {
+      background-color: darken($primaryColor, 7%);
+      transform: scale(1.1);
+    }
+  }
+
+  &__section-line {
+    border: none;
+    border-color: $sectionLineColor;
+    height: 1px;
+    background-color: $sectionLineColor;
+    margin: 43px 0 37px 0;
+  }
+  &__wrapper {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > span {
+      margin-left: 12px;
+      color: $euroPriceFontColor;
+    }
+  }
+  &__subtitle {
+    font-weight: $fontWeightRegular;
+    color: $formSubtitleColor;
+    font-size: 14px;
+    margin: 0 0 0 11px;
+  }
+}

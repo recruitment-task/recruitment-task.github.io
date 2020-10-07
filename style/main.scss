@@ -1,11 +1,32 @@
-@import "./sass/foo";
-
+@import "./sass/variables";
+@import "./sass/normalize";
+@import "./sass/form";
+@import "./sass/table";
+@import "./sass/search";
 html {
   box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: $fontWeightRegular;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+
+main{
+  padding: 93px 0 10px 336px;
+  min-height: 100vh;
+}
+.show {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+.primary-color {
+  color: $primaryColor;
 }

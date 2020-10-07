@@ -1,13 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/main.css">
-    <title>Recruitment task</title>
-</head>
-<body>
-    
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Zadanie Rekrutacyjne</title>
+  </head>
+  <body>
+    <main>
+      <form class="form">
+        <div class="form__input-container">
+          <label for="company_name" class="form__label">Nazwa firmy</label>
+          <input
+            type="text"
+            class="form__input input-js"
+            name="company_name"
+            id="company_name"
+            placeholder="Nazwa firmy"
+          />
+          <span class="form__error-hint">Błąd</span>
+        </div>
+        <div class="form__input-container">
+          <img class="form__icon-img" id="form_select"
+          src="assets/arrow_down.svg" alt="Icon for input">
+          <label for="person" class="form__label">Pracownik</label>
+          <input
+            type="text"
+            class="form__input input-js"
+            name="person"
+            id="person"
+            placeholder="Pracownik"
+          />
+          <span class="form__error-hint">Błąd</span>
+        </div>
+        <div style="position: relative">
+          <div class="search" id="search">
+            <div class="searcher__input-container">
+              <input
+                type="text"
+                id="search_input"
+                class="search__input"
+                placeholder="Szukaj"
+              />
+              <img
+                class="search__icon"
+                src="./assets/search-icon.svg"
+                alt="Search icon"
+              />
+            </div>
+            <ul class="search__list" id="search_list"></ul>
+          </div>
+        </div>
+        <hr class="form__section-line" />
+        <h2 class="form__subtitle">Zadania</h2>
+        <div class="form__input-container">
+          <label for="task" class="form__label">Nazwa zadania</label>
+          <input
+            type="text"
+            class="form__input input-js"
+            name="task"
+            id="task"
+            placeholder="Nazwa zadania"
+          />
+          <span class="form__error-hint">Błąd</span>
+        </div>
+        <div class="form__input-container">
+          <label for="amount" class="form__label">Kwota w PLN</label>
+          <input
+            type="number"
+            class="form__input input-js"
+            name="amount"
+            id="amount"
+            placeholder="Kwota w PLN"
+          />
+          <span class="form__error-hint">Błąd</span>
+        </div>
+
+        <div class="form__wrapper">
+          <span>1 euro = <span id="euro_price"></span></span>
+          <button class="form__add-btn">Dodaj</button>
+        </div>
+      </form>
+
+      <table>
+        <tr>
+          <th>
+            <span>
+              Nazwa Zadania<span
+                ><img
+                  id="sort_asc_name"
+                  src="./assets/sort_arrow_up.svg"
+                  alt="Sort icon" />
+                <img
+                  id="sort_desc_name"
+                  src="./assets/sort_arrow_down.svg"
+                  alt="Sort icon"
+              /></span>
+            </span>
+          </th>
+          <th>
+            <span>
+              Kwota w PLN<span
+                ><img
+                  id="sort_asc_pln"
+                  src="./assets/sort_arrow_up.svg"
+                  alt="Sort icon" />
+                <img
+                  id="sort_desc_pln"
+                  src="./assets/sort_arrow_down.svg"
+                  alt="Sort icon"
+              /></span>
+            </span>
+          </th>
+          <th>
+            <span>
+              Kwota w EUR<span
+                ><img
+                  id="sort_asc_euro"
+                  src="./assets/sort_arrow_up.svg"
+                  alt="Sort icon" />
+                <img
+                  id="sort_desc_euro"
+                  src="./assets/sort_arrow_down.svg"
+                  alt="Sort icon"
+              /></span>
+            </span>
+          </th>
+          <th>Opcje</th>
+        </tr>
+      </table>
+      <span class="amount-sum">Suma: <span class="amount-sum-js"></span> </span>
+    </main>
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>

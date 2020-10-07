@@ -1,0 +1,57 @@
+table {
+  text-align: left;
+  width: 702px;
+  margin-top: 45px;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: 1px solid $tableBorderColor;
+  color: $tableFontColor;
+  border-radius: 3px;
+}
+th,
+td {
+  border-bottom: 1px solid $tableBorderColor;
+}
+th {
+  font-weight: $fontWeightSemiBold;
+  padding: 18px 0 23px 19px;
+}
+th:last-child {
+  text-align: center;
+  padding-right: 53px;
+}
+th span {
+  display: flex;
+}
+th span span {
+  margin-left: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+th span span img {
+  cursor: pointer;
+}
+td {
+  font-weight: $fontWeightRegular;
+  padding: 15px 0 17px 19px;
+}
+td img {
+  cursor: pointer;
+  margin-right: 11px;
+  vertical-align: text-bottom;
+}
+td span {
+  cursor: pointer;
+}
+tr:last-child {
+  td {
+    border: none;
+  }
+}
+.amount-sum {
+  display: inline-block;
+  margin: 25px 0 0 17px;
+  color: $tableFontColor;
+  font-size: 18px;
+}
