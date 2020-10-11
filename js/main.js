@@ -100,6 +100,18 @@ $("#form_select")[0].onclick = () => {
     loadPersonList(personList);
   }
 };
+
+let htmlString = "";
+loadHtmlAsString('./content/list-element.html').then((html) => (htmlString = html)); 
+const loadPersonList = (list) => {
+  const searchList = $("#search_list")[0];
+  searchList.innerHTML = "";
+  const htmlList = list.map((person) =>
+    conectPersonWithHtmlListItem(person, htmlString)
+  );
+  htmlList.forEach((element) => searchList.appendChild(element));
+};
+
 document.onmousedown = (e) => {
   if (e.target.isEqualNode($("main")[0]) && isSearchOpen) {
     searchSection.classList.remove("show");
@@ -149,15 +161,7 @@ searchSection.onkeydown = (e) => {
     }
   }
 };
-const loadPersonList = async (list) => {
-  const searchList = $("#search_list")[0];
-  searchList.innerHTML = "";
-  const htmlString = await loadHtmlAsString("./content/list-element.html");
-  const htmlList = list.map((person) =>
-    conectPersonWithHtmlListItem(person, htmlString)
-  );
-  htmlList.forEach((element) => searchList.appendChild(element));
-};
+
 const conectPersonWithHtmlListItem = (person, htmlString) => {
   const htmlListItem = stringToHTML(htmlString);
   const li = htmlListItem.querySelector("li");
